@@ -1,0 +1,54 @@
+{
+  "name": "codebell",
+  "version": "1.0.1",
+  "description": "CodeBell - AI task completion notification service for Cursor, Claude and other AI coding assistants. Supports Feishu, DingTalk, WeChat, Telegram.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "codebell": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "prepare": "npm run build"
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "codebell",
+    "mcp",
+    "notification",
+    "feishu",
+    "dingtalk",
+    "wechat",
+    "telegram",
+    "ai",
+    "cursor",
+    "claude",
+    "ai-assistant",
+    "code-notification"
+  ],
+  "author": "orua88",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cuser-it/codebell"
+  },
+  "homepage": "https://codebell.flic.site",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "axios": "^1.7.9",
+    "crypto-js": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/crypto-js": "^4.2.2",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
