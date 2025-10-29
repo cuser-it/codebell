@@ -1,0 +1,29 @@
+name: sync2gitee
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  repo-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Mirror GitHub to Gitee
+        uses: Yikun/hub-mirror-action@master
+        with:
+          #github用户名
+          src: 'github/${{ github.repository_owner }}'
+          #gitee用户名
+          dst: 'gitee/${{ secrets.GITEE_USER }}'
+          #gitee密钥
+          dst_key: '${{ secrets.GITEE_PRIVATE_KEY }}'
+          #gitee私人令牌
+          dst_token: '${{ secrets.GITEE_TOKEN }}'
+          #gitee仓库名字
+          static_list: '${{secrets.GITEE_LIBNAME}}'
+          force_update: true
+          # 不要使用可能导致删除分支的参数
